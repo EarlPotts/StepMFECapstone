@@ -62,3 +62,15 @@ body{
 .navbar-collapse {
   justify-content: flex-end;
 }
+
+.feature-title{
+  text-align: center;
+}
+.feature-text{
+  text-align: center;
+}
+.feat-img{
+  width: 50%;
+  height: 70%;
+  text-align: center;
+}
