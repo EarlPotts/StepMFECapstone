@@ -2,10 +2,18 @@ body{
   background: #ededed;
 }
 .header {
-  background-image: url('images/protest.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
+}
+#home-header{
+  background-image: url('images/protest.jpg');
+}
+#history-header{
+  background-image: url('images/black-wall-street.jpg');
+}
+#history-text{
+  font-size: 25px;
 }
 .overlay {
   position: absolute;
