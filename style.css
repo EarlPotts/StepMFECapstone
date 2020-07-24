@@ -44,9 +44,6 @@ body{
   background:#fff;
   color:#000;
 }
-.navbar {
-  background: #c8c8c8;
-}
 
 .nav-link{
   color: #11661c;
@@ -61,4 +58,12 @@ body{
 }
 .navbar-collapse {
   justify-content: flex-end;
+}
+
+.feature-title{
+  text-align: center;
+}
+.feat-img{
+  max-width: 50%;
+  height:auto;
 }
