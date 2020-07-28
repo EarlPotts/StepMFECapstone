@@ -41,32 +41,46 @@
         <p>Black Wall Street is a platform meant to increase visibility of
         black-owned businesses who are seeking investment and connect them with
         like-minded potential investors</p>
-        <button class="btn btn-outline-secondary btn-lg">On to investment!</button>
+        <button class="btn btn-outline-secondary btn-lg" data-toggle="modal" data-target="#investingPopup">On to investment!</button>
       </div>
+
+      <div id="investingPopup" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 align-middle">
+                            <h3 class="feature-title">For Business Owners</h3>
+                            <img src="{% static 'images/officeTalk.png' %}"class="img-fluid feat-img center-block">
+                            <p class="my-auto text-center">Black business owners can use our platform to pitch their businesses
+                            and gain support/visibility for their business.</p>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <h3 class="feature-title">For Investors</h3>
+                            <img src="{% static 'images/whiteboard.png' %}" class="img-fluid feat-img">
+                            <p class="text-center align-middle">Investors looking to support black-owned businesses can use our platform
+                            to find little-known businesses to uplift and support.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
     </header>
 
-    <div class="container features">
-      <h1 class="text-center m-4"> How can Black Wall Street help you?</h1>
-    <hr/>
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12 align-middle">
-          <h3 class="feature-title">For Business Owners</h3>
-          <img src="images/officeTalk.png"class="img-fluid float-left feat-img">
-          <p class="my-auto text-center">Black business owners can use our platform to pitch their businesses
-          and gain support/visibility for their business.</p>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-12">
-          <h3 class="feature-title">For Investors</h3>
-          <div class= "container my-auto">
-            <img src="images/whiteboard.png" class="img-fluid float-left feat-img">
-            <p class="text-center align-middle">Investors looking to support black-owned businesses can use our platform
-              to find little-known businesses to uplift and support.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-        </div>
-      </div>
-    </div>
+
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
