@@ -9,26 +9,33 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'form.css' %}">
+
 
     <title>Black Wall Street</title>
   </head>
   <body>
 
+
+
     <nav class="navbar navbar-expand-md">
-      <a class="navbar-brand" href="#">Black Wall Street</a>
+      <button class="tablink" onclick=openPage("home")>Black Wall Street</a>
       <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="main-navigation">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <button class="tablink" onclick=openPage("home")>Home</button>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">History</a>
+            <button class="tablink" onclick=openPage("history")>History</button>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Investing</a>
+            <button class="tablink" onclick=openPage("investing")>Investing</button>
+          </li>
+          <li class="nav-item">
+            <button class="tablink" onclick=openPage("submitbusiness")>Submit Businesses</button>
           </li>
         </ul>
       </div>
@@ -36,7 +43,7 @@
 
     <header class="page-header header container-fluid">
       <div class="overlay"></div>
-      <div class="description">
+      <div id= "home" class="tabcontent description">
         <h1>Welcome to Black Wall Street</h1>
         <p>Black Wall Street is a platform meant to increase visibility of
         black-owned businesses who are seeking investment and connect them with
@@ -45,11 +52,174 @@
       </div>
     </header>
 
+      <div id= "history" class="tabcontent description">
+        <h1>History of Black Wall Street</h1>
+        <p>Black Wall Street is a platform meant to increase visibility of
+        black-owned businesses who are seeking investment and connect them with
+        like-minded potential investors</p>
+      </div>
+
+      <div id= "investing" class="tabcontent description">
+        <h1>Invest in the community</h1>
+        <p>This page will have investment opportunities on it. Coming soon :)</p>
+      </div>
+
+      <div id= "submitbusiness" class="tabcontent description">
+        <h1>Submit your business</h1>
+
+        <div>
+        <form action="/action_page.php">
+        <div class="row">
+        <div class="col-25">
+          <label for="bname">Business Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="bname" name="businessname" placeholder="Business name..">
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="col-25">
+          <label for="blink">Business Link</label>
+        </div>
+        <div class="col-75">
+          <input type="url" id="blink" name="businesslink" placeholder="Business link..">
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="col-25">
+          <label for="email">Contact Email</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="email" name="contactemail" placeholder="Contact email..">
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="col-25">
+          <label for="oname">Owner Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="oname" name="ownername" placeholder="Owner name..">
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="col-25">
+          <label for="baddress">Address</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="baddress" name="businessaddy" placeholder="Business address..">
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="col-25">
+          <label for="state">State</label>
+        </div>
+        <div class="col-75">
+          <select id="state" name="state">
+            <option value="alabama">Alabama</option>
+            <option value="alaska">Alaska</option>
+            <option value="arizona">Arizona</option>
+            <option value="arkansas">Arkansas</option>
+            <option value="california">California</option>
+            <option value="colorado">Colorado</option>
+            <option value="connecticut">Connecticut</option>
+            <option value="florida">Florida</option>
+            <option value="georgia">Georgia</option>
+            <option value="hawaii">Hawaii</option>
+            <option value="idaho">Idaho</option>
+            <option value="illinois">Illinois</option>
+            <option value="indiana">Indiana</option>
+            <option value="iowa">Iowa</option>
+            <option value="kansas">Kansas</option>
+            <option value="kentucky">Kentucky</option>
+            <option value="louisiana">Louisiana</option>
+            <option value="maine">Maine</option>
+            <option value="maryland">Maryland</option>
+            <option value="massachusetts">Massachusetts</option>
+            <option value="michigan">Michigan</option>
+            <option value="minnesota">Minnesota</option>
+            <option value="mississippi">Mississippi</option>
+            <option value="missouri">Missouri</option>
+            <option value="montana">Montana</option>
+            <option value="nebraska">Nebraska</option>
+            <option value="nevada">Nevada</option>
+            <option value="new hampshire">New Hampshire</option>
+            <option value="new jersey">New Jersey</option>
+            <option value="new mexico">New Mexico</option>
+            <option value="north carolina">North Carolina</option>
+            <option value="north dakota">North Dakota</option>
+            <option value="ohio">Ohio</option>
+            <option value="oklahoma">Oklahoma</option>
+            <option value="oregon">Oregon</option>
+            <option value="pennsylvania">Pennsylvania</option>
+            <option value="rhode island">Rhode Island</option>
+            <option value="south carolina">South Carolina</option>
+            <option value="south dakota">South Dakota</option>
+            <option value="tennessee">Tennessee</option>
+            <option value="texas">Texas</option>
+            <option value="utah">Utah</option>
+            <option value="vermont">Vermont</option>
+            <option value="virginia">Virginia</option>
+            <option value="washington">Washington</option>
+            <option value="west virginia">West Virginia</option>
+            <option value="wisconsin">Wisconsin</option>
+            <option value="wyoming">Wyoming</option>
+          </select>
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="col-25">
+          <label for="zip">Zip Code</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="zip" name="zipcode" placeholder="Zip code..">
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="col-25">
+          <label for="country">Country</label>
+        </div>
+        <div class="col-75">
+          <select id="country" name="country">
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+          </select>
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="col-25">
+          <label for="description">Description</label>
+        </div>
+        <div class="col-75">
+          <textarea id="description" name="description" placeholder="Write a short description of your business.." style="height:200px"></textarea>
+        </div>
+        </div>
+
+        <div class="row">
+        <input type="submit" value="Submit">
+        </div>
+      </form>
+      </div>
+
+
+
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="{% static 'main.js' %}"></script>
+    <script src="{% static 'index.js' %}"></script>
+    
+
   </body>
 </html>
