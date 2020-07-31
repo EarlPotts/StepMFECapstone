@@ -12,6 +12,9 @@ body{
 #history-header{
   background-image: url('images/black-wall-street.jpg');
 }
+#invest-header{
+  background-image: url('images/stock_floor.png');
+}
 #history-text{
   font-size: 25px;
 }
