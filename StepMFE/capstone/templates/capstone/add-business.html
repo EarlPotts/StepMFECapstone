@@ -52,15 +52,14 @@
     <div class="container features">
       <div id= "submitbusiness">
         <h1>Submit your business</h1>
-
-        <div>
-        <form action="/action_page.php">
+        <form action="/add_business/" method="post">
+        {% csrf_token %}
         <div class="row">
         <div class="col-25">
           <label for="bname">Business Name</label>
         </div>
         <div class="col-75">
-          <input type="text" id="bname" name="businessname" placeholder="Business name..">
+          <input type="text" id="bname" name="name" placeholder="Business name..">
         </div>
         </div>
 
@@ -69,7 +68,16 @@
           <label for="blink">Business Link</label>
         </div>
         <div class="col-75">
-          <input type="url" id="blink" name="businesslink" placeholder="Business link..">
+          <input type="url" id="blink" name="link" placeholder="Business link..">
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="col-25">
+          <label for="blink">Category</label>
+        </div>
+        <div class="col-75">
+          {{ form.category }} 
         </div>
         </div>
 
@@ -78,7 +86,7 @@
           <label for="email">Contact Email</label>
         </div>
         <div class="col-75">
-          <input type="text" id="email" name="contactemail" placeholder="Contact email..">
+          <input type="text" id="email" name="email" placeholder="Contact email..">
         </div>
         </div>
 
@@ -87,7 +95,7 @@
           <label for="oname">Owner Name</label>
         </div>
         <div class="col-75">
-          <input type="text" id="oname" name="ownername" placeholder="Owner name..">
+          <input type="text" id="oname" name="contact_name" placeholder="Owner name..">
         </div>
         </div>
 
@@ -96,7 +104,7 @@
           <label for="baddress">Address</label>
         </div>
         <div class="col-75">
-          <input type="text" id="baddress" name="businessaddy" placeholder="Business address..">
+          <input type="text" id="baddress" name="address" placeholder="Business address..">
         </div>
         </div>
 
@@ -191,7 +199,7 @@
         <div class="row">
         <input type="submit" value="Submit">
         </div>
-      </form>
+        </form>
       </div>
       </div>
 

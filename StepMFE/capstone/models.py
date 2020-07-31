@@ -21,7 +21,7 @@ class Business(models.Model):
 
 class Search(models.Model):
   category = models.CharField(max_length = 32, blank = True)
-  state = models.CharField(max_length = 64, blank = True)
+  keywords = models.CharField(max_length = 32, blank = True)
 
   class Meta:
     managed = True
