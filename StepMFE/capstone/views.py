@@ -35,4 +35,4 @@ def add_business(request):
   context = {
     'form': form,
   }
-  return render(request, 'capstone/add_business.html', context)
+  return render(request, 'capstone/add-business.html', context)
