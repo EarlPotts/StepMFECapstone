@@ -26,7 +26,7 @@ SECRET_KEY = 'u2^n694m4!ln#d(ol*=lb-%m7=9o+o#u@yluy(-+m76(2ns1gm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['0.0.0.0', 'tmliu-step-2020.uc.r.appspot.com']
 
 
 # Application definition

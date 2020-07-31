@@ -3,21 +3,17 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect
 
-from .forms import BusinessForm
+from .forms import BusinessForm, SearchForm
+from .models import Business
 
 # Create your views here.
-def index(request):
-	return render(request, 'capstone/index.html')
-
-def thanks(request):
-	return render(request, 'capstone/thanks.html')
-
 def add_business(request):
   form = BusinessForm(request.POST)
   if request.method == 'POST':
     if form.is_valid():
       form.name = form.cleaned_data['name']
       form.link = form.cleaned_data['link']
+      form.category = form.cleaned_data['category']
       form.description = form.cleaned_data['description']
       form.email = form.cleaned_data['email']
       form.contact_name = form.cleaned_data['contact_name']
@@ -29,7 +25,27 @@ def add_business(request):
       return HttpResponseRedirect('/thanks')
   else: 
     form = BusinessForm()
-  context = {
-    'form': form,
-  }
+  context = {'form': form}
   return render(request, 'capstone/add_business.html', context)
+
+def index(request):
+	return render(request, 'capstone/index.html')
+
+def thanks(request):
+	return render(request, 'capstone/thanks.html')
+
+def search(request):
+  form = SearchForm(request.POST)
+  if request.method == 'POST':
+    businesses = Business.objects.all()
+    if form.is_valid():
+      if form.cleaned_data['category']:
+        businesses = businesses.filter(category = form.cleaned_data['category'])
+      if form.cleaned_data['state']:
+        businesses = businesses.filter(state = form.cleaned_data['state'])
+    context = {'businesses': businesses}
+    return render(request, 'capstone/search.html', context)
+  else: 
+    form = SearchForm()
+    context = {'form': form}
+  return render(request, 'capstone/search.html', context)
