@@ -43,7 +43,7 @@ def search(request):
         businesses = businesses.filter(category = form.cleaned_data['category'])
       if form.cleaned_data['state']:
         businesses = businesses.filter(state = form.cleaned_data['state'])
-    context = {'businesses': businesses}
+    context = {'businesses': businesses, 'form': SearchForm()}
     return render(request, 'capstone/search.html', context)
   else: 
     form = SearchForm()
