@@ -2,10 +2,18 @@ body{
   background: #ededed;
 }
 .header {
-  background-image: url('images/protest.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
+}
+#home-header{
+  background-image: url('images/protest.jpg');
+}
+#history-header{
+  background-image: url('images/black-wall-street.jpg');
+}
+#history-text{
+  font-size: 25px;
 }
 .overlay {
   position: absolute;
@@ -44,9 +52,6 @@ body{
   background:#fff;
   color:#000;
 }
-.navbar {
-  background: #c8c8c8;
-}
 
 .nav-link{
   color: #11661c;
@@ -61,4 +66,12 @@ body{
 }
 .navbar-collapse {
   justify-content: flex-end;
+}
+
+.feature-title{
+  text-align: center;
+}
+.feat-img{
+  max-width: 50%;
+  height:auto;
 }
