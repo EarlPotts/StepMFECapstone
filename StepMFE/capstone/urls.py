@@ -24,5 +24,6 @@ urlpatterns = [
     path('history/', views.history, name='history'),
     path('add_business/', views.add_business, name = 'add_business'),
     path('admin/', admin.site.urls),
+    path('search/', views.search, name = 'search'),
     path('thanks/', views.thanks, name = 'thanks'),
 ]
