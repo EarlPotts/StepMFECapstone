@@ -7,6 +7,7 @@ from .forms import BusinessForm, SearchForm
 from .models import Business
 
 # Create your views here.
+
 def add_business(request):
   form = BusinessForm(request.POST)
   if request.method == 'POST':
@@ -30,6 +31,9 @@ def add_business(request):
 
 def index(request):
 	return render(request, 'capstone/index.html')
+
+def history(request):
+    return render(request, 'capstone/history-page.html')
 
 def thanks(request):
 	return render(request, 'capstone/thanks.html')
