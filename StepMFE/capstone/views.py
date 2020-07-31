@@ -26,8 +26,11 @@ def add_business(request):
       return HttpResponseRedirect('/thanks')
   else: 
     form = BusinessForm()
-  context = {'form': form}
-  return render(request, 'capstone/add_business.html', context)
+
+  context = {
+    'form': form,
+  }
+  return render(request, 'capstone/add-business.html', context)
 
 def index(request):
 	return render(request, 'capstone/index.html')
