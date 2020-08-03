@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static "images/apple-touch-icon.png" %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static "images/favicon-32x32.png" %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static "images/favicon-16x16.png" %}">
+
     <title>Black Wall Street</title>
   </head>
   <body>
@@ -54,14 +59,14 @@
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 align-middle">
           <h3 class="feature-title">For Business Owners</h3>
-          <img src="images/officeTalk.png"class="img-fluid float-left feat-img">
+          <img src="{% static "images/officeTalk.png" %}" class="img-fluid float-left feat-img">
           <p class="my-auto text-center">Black business owners can use our platform to pitch their businesses
           and gain support/visibility for their business.</p>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12">
           <h3 class="feature-title">For Investors</h3>
           <div class= "container my-auto">
-            <img src="images/whiteboard.png" class="img-fluid float-left feat-img">
+            <img src="{% static "images/whiteboard.png" %}" class="img-fluid float-left feat-img">
             <p class="text-center align-middle">Investors looking to support black-owned businesses can use our platform
               to find little-known businesses to uplift and support.</p>
           </div>
