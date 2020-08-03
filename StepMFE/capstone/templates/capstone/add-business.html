@@ -41,7 +41,12 @@
     <header class="page-header header container-fluid" id="home-header">
       <div class="overlay"></div>
       <div class="description">
-        <h1>Submit a new business</h1>
+        <h1> Submit a new business</h1>
+        <style>
+        h1 {
+        color: green;
+        }
+        </style>
         <p>Use the form below to submit your business.</p>
         <a class="btn btn-outline-secondary btn-lg"  roles="button" href ="#submitbusiness">
         Submit business form
@@ -54,7 +59,8 @@
         <h1>Submit your business</h1>
 
         <div>
-        <form action="/action_page.php">
+        <form action="/add_business/" method= "post">
+        {% csrf_token %}
         <div class="row">
         <div class="col-25">
           <label for="bname">Business Name</label>
