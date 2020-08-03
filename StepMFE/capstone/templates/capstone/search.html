@@ -62,14 +62,18 @@
         <input type="submit" value="Submit">
         </form>
         <table>
-          <tr>
-            <td>Name</td>
-            <td>Description</td>
-          </tr>
           {% for business in businesses %}
           <tr>
-            <td>{{business.name}}</td>
-            <td>{{business.description}}</td>
+              <div class="card" style="width: 18rem;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{business.name}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{business.category}}</h6>
+                    <p class="card-text">{{business.description}}</p>
+                    <a href="{{business.link}}" class="card-link">Website</a>
+                </div>
+              </div>
+            <td></td>
+            <td></td>
           </tr>
           {% empty %}
           {% endfor %}
