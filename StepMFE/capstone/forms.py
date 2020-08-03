@@ -11,7 +11,7 @@ class BusinessForm(ModelForm):
     model = Business
     fields = ['name', 'link', 'category', 'description', 'email', 'contact_name', 'address', 'zipcode', 'state', 'country']
     widgets = {
-      'category': forms.Select(choices = CATEGORIES, attrs = {'class': 'form-control'}),
+      'category': forms.Select(choices = CATEGORIES),
     }
     
   def clean_business_form():

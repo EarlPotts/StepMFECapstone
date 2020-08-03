@@ -56,16 +56,16 @@
     <div class="search" id = "searchandinvest">
         <form action="/search/" method="post">
         {% csrf_token %}
-        <div class="container">
-          <div class="row">
-          {% for field in form  %}
-            <div class="col-sm-6">
-              <b>{{ field.label_tag }}</b> {{ field }} 
-            </div>
-          {% endfor %}
-          </div>  
+        <div class="row">
+          <div class="col-sm-4" style="display:flex;">
+            <b>{{form.category.label_tag}}</b> {{form.category}} 
+          </div>
+          <div class="col-sm-4" style="display:flex;">
+            <b>{{form.keywords.label_tag}}</b> {{form.keywords}}
+          </div> 
+            <input class="btn btn-outline-secondary" type="submit" value="Submit">
+          </div>
         </div>
-        <input type="submit" value="Submit">
         </form>
         <table>
           {% for business in businesses %}
@@ -84,6 +84,7 @@
           {% empty %}
           {% endfor %}
         </table>
+        <p></p>
       </div>
     </div>
 
