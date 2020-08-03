@@ -54,7 +54,7 @@
       </div>
     </header>
 
-    <div class="container features">
+    <div class="container-features">
       <div id= "submitbusiness">
         <h1>Submit your business</h1>
 
@@ -63,52 +63,52 @@
         {% csrf_token %}
         <div class="row">
         <div class="col-25">
-          <label for="bname">Business Name</label>
+          <label class= "business-form-label" for="bname">Business Name</label>
         </div>
         <div class="col-75">
-          <input type="text" id="bname" name="businessname" placeholder="Business name..">
+          <input class= "business-form-input" type="text" id="bname" name="businessname" placeholder="Business name..">
         </div>
         </div>
 
         <div class="row">
         <div class="col-25">
-          <label for="blink">Business Link</label>
+          <label class= "business-form-label" for="blink">Business Link</label>
         </div>
         <div class="col-75">
-          <input type="url" id="blink" name="businesslink" placeholder="Business link..">
+          <input class= "business-form-input" type="url" id="blink" name="businesslink" placeholder="Business link..">
         </div>
         </div>
 
         <div class="row">
         <div class="col-25">
-          <label for="email">Contact Email</label>
+          <label class= "business-form-label" for="email">Contact Email</label>
         </div>
         <div class="col-75">
-          <input type="text" id="email" name="contactemail" placeholder="Contact email..">
+          <input class= "business-form-input" type="text" id="email" name="contactemail" placeholder="Contact email..">
         </div>
         </div>
 
         <div class="row">
         <div class="col-25">
-          <label for="oname">Owner Name</label>
+          <label class= "business-form-label" for="oname">Owner Name</label>
         </div>
         <div class="col-75">
-          <input type="text" id="oname" name="ownername" placeholder="Owner name..">
+          <input class= "business-form-input" type="text" id="oname" name="ownername" placeholder="Owner name..">
         </div>
         </div>
 
         <div class="row">
         <div class="col-25">
-          <label for="baddress">Address</label>
+          <label class= "business-form-label" for="baddress">Address</label>
         </div>
         <div class="col-75">
-          <input type="text" id="baddress" name="businessaddy" placeholder="Business address..">
+          <input class= "business-form-input" type="text" id="baddress" name="businessaddy" placeholder="Business address..">
         </div>
         </div>
 
         <div class="row">
         <div class="col-25">
-          <label for="state">State</label>
+          <label class= "business-form-label" for="state">State</label>
         </div>
         <div class="col-75">
           <select id="state" name="state">
@@ -166,16 +166,16 @@
 
         <div class="row">
         <div class="col-25">
-          <label for="zip">Zip Code</label>
+          <label class= "business-form-label" for="zip">Zip Code</label>
         </div>
         <div class="col-75">
-          <input type="text" id="zip" name="zipcode" placeholder="Zip code..">
+          <input class= "business-form-input" type="text" id="zip" name="zipcode" placeholder="Zip code..">
         </div>
         </div>
 
         <div class="row">
         <div class="col-25">
-          <label for="country">Country</label>
+          <label class= "business-form-label" for="country">Country</label>
         </div>
         <div class="col-75">
           <select id="country" name="country">
@@ -187,7 +187,7 @@
 
         <div class="row">
         <div class="col-25">
-          <label for="description">Description</label>
+          <label class= "business-form-label" for="description">Description</label>
         </div>
         <div class="col-75">
           <textarea id="description" name="description" placeholder="Write a short description of your business.." style="height:200px"></textarea>
@@ -195,7 +195,7 @@
         </div>
 
         <div class="row">
-        <input type="submit" value="Submit">
+        <input class= "business-form-submit" type="submit" value="Submit">
         </div>
       </form>
       </div>

@@ -1,5 +1,5 @@
 /* Style inputs, select elements and textareas */
-.container input[type=text], select, textarea{
+.business-form-input[type=text], select, textarea{
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -9,13 +9,13 @@
 }
 
 /* Style the label to display next to the inputs */
-.container label {
+.business-form-label {
   padding: 12px 12px 12px 0;
   display: inline-block;
 }
 
 /* Style the submit button */
-.container input[type=submit] {
+.business-form-submit[type=submit] {
   background-color: #4CAF50;
   color: white;
   padding: 12px 20px;
@@ -26,28 +26,28 @@
 }
 
 /* Style the container */
-.container {
+.container-features {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
 }
 
 /* Floating column for labels: 25% width */
-.container .col-25 {
+.col-25 {
   float: left;
   width: 25%;
   margin-top: 6px;
 }
 
 /* Floating column for inputs: 75% width */
-.container .col-75 {
+.col-75 {
   float: left;
   width: 75%;
   margin-top: 6px;
 }
 
 /* Clear floats after the columns */
-.container .row:after {
+.row:after {
   content: "";
   display: table;
   clear: both;
