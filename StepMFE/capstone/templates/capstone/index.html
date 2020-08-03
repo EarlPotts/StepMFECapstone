@@ -27,11 +27,10 @@
       <div class="collapse navbar-collapse" id="main-navigation">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" href="index.html">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/history">History</a>
-          </li>
           <li class="nav-item">
             <a class="nav-link" href="/search">Investing</a>
           </li>
@@ -49,8 +48,43 @@
         <p>Black Wall Street is a platform meant to increase visibility of
         black-owned businesses who are seeking investment and connect them with
         like-minded potential investors</p>
-        <button class="btn btn-outline-secondary btn-lg">On to investment!</button>
+        <button class="btn btn-outline-secondary btn-lg" data-toggle="modal" data-target="#investingPopup">On to investment!</button>
       </div>
+
+      <div id="investingPopup" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Ways To Use Our Platform</h4>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row text-center">
+                        <div class="col-lg-6 col-md-6 col-sm-12 align-middle">
+                            <h3 class="feature-title">For Business Owners</h3>
+                            <img src="{% static 'images/officeTalk.png' %}"class="img-fluid feat-img center-block" href="invest-page.html">
+                            <p class="my-auto text-center">Black business owners can use our platform to pitch their businesses
+                            and gain support/visibility for their business.</p>
+                            <button class="btn btn-outline-secondary btn-lg" href="add-business.html">Submit Business</button>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <h3 class="feature-title">For Investors</h3>
+                            <img src="{% static 'images/whiteboard.png' %}" class="img-fluid feat-img">
+                            <p class="text-center align-middle">Investors looking to support black-owned businesses can use our platform
+                            to find little-known businesses to uplift and support.</p>
+                            <button class="btn btn-outline-secondary btn-lg" href="">View Businesses</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
     </header>
 
     <div class="container features">
