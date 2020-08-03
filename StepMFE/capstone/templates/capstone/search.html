@@ -47,12 +47,13 @@
       <div class="description">
         <h1>Search for investment opportunities</h1>
         <p>Here you can search for opportunities to invest and support black-owned small businesses</p>
+        <a class="btn btn-outline-success btn-lg" roles="button" href ="#searchandinvest">Search and invest</a>
       </div>
     </header>
 
     <div class="container features">
       <h1 class="text-center m-4">Search for investment opportunities</h1>
-    <div class="search">
+    <div class="search" id = "searchandinvest">
         <form action="/search/" method="post">
         {% csrf_token %}
         <div class="container">
