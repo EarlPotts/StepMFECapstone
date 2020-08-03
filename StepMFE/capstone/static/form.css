@@ -1,5 +1,5 @@
 /* Style inputs, select elements and textareas */
-input[type=text], select, textarea{
+.container input[type=text], select, textarea{
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -9,13 +9,13 @@ input[type=text], select, textarea{
 }
 
 /* Style the label to display next to the inputs */
-label {
+.container label {
   padding: 12px 12px 12px 0;
   display: inline-block;
 }
 
 /* Style the submit button */
-input[type=submit] {
+.container input[type=submit] {
   background-color: #4CAF50;
   color: white;
   padding: 12px 20px;
@@ -33,21 +33,21 @@ input[type=submit] {
 }
 
 /* Floating column for labels: 25% width */
-.col-25 {
+.container .col-25 {
   float: left;
   width: 25%;
   margin-top: 6px;
 }
 
 /* Floating column for inputs: 75% width */
-.col-75 {
+.container .col-75 {
   float: left;
   width: 75%;
   margin-top: 6px;
 }
 
 /* Clear floats after the columns */
-.row:after {
+.container .row:after {
   content: "";
   display: table;
   clear: both;
