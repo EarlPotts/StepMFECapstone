@@ -6,8 +6,6 @@ from django.shortcuts import redirect
 from .forms import BusinessForm, SearchForm
 from .models import Business
 
-# Create your views here.
-
 def add_business(request):
   form = BusinessForm(request.POST)
   if request.method == 'POST':
@@ -24,6 +22,8 @@ def add_business(request):
       form.country = form.cleaned_data['country']
       form.save()
       return HttpResponseRedirect('/thanks')
+    else:
+      print(form.errors)
   else: 
     form = BusinessForm()
 
@@ -48,9 +48,9 @@ def search(request):
     if form.is_valid():
       if form.cleaned_data['category']:
         businesses = businesses.filter(category = form.cleaned_data['category'])
-      if form.cleaned_data['state']:
-        businesses = businesses.filter(state = form.cleaned_data['state'])
-    context = {'businesses': businesses, 'form': SearchForm()}
+      if form.cleaned_data['keywords']:
+        businesses = businesses.filter(description__icontains = form.cleaned_data['keywords'])
+    context = {'businesses': businesses, 'form': form}
     return render(request, 'capstone/search.html', context)
   else: 
     form = SearchForm()

@@ -10,12 +10,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static "images/apple-touch-icon.png" %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static "images/favicon-32x32.png" %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static "images/favicon-16x16.png" %}">
+
     <title>Black Wall Street</title>
   </head>
   <body>
 
     <nav class="navbar navbar-expand-md">
-      <a class="navbar-brand" href="#"></a>
+      <a class="navbar-brand" href="#">Black Wall Street</a>
       <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -28,7 +33,7 @@
             <a class="nav-link" href="/history">History</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Investing</a>
+            <a class="nav-link" href="/search">Investing</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/add_business">Add Business</a>
@@ -47,16 +52,26 @@
         assaulted a white woman and instead of waiting on invesitigation, it sparked 2 days of racial violence
         towards the black ncitizens of Tulsa. This event led to over 1,000 injuries and deaths, and the complete
       destruction of Black Wall Street, displacing over 9,000 people.</p>
+      <a class="btn btn-outline-secondary btn-lg" roles="button" href ="#learnmore">Learn more</a>
       </div>
     </header>
 
-    <div class="container features">
+    <div class="container features" id = "learnmore">
       <h1 class="">
       <div class=" my-4 embed-responsive embed-responsive-16by9">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/x-ItsPBTFO0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <h1 class="text-center m-4"> History resources</h1>
       <hr/>
+      <ul class="list-group my-5">
+        <li class="list-group-item"><a href ="https://daily.jstor.org/the-devastation-of-black-wall-street/">
+            The Devastation of Black Wall Street</a></li>
+        <li class="list-group-item"><a href = "https://www.forbes.com/sites/antoinegara/2020/06/18/the-bezos-of-black-wall-street-tulsa-race-riots-1921/#7891750ff321">
+            The Bezos of Black Wall Street</a></li>
+        <li class="list-group-item"><a href="https://en.wikipedia.org/wiki/The_Black_Wall_Street">The Black Wall Street - Wikipedia</a></li>
+        <li class="list-group-item"><a href="https://www.cnn.com/videos/us/2020/06/18/tulsa-greenwood-black-wall-street-abby-phillip-newday-vpx.cnn">See What Tulsa's Black Wall Street Has Become  [Video]</a></li>
+        <li class="list-group-item"><a href = "https://www.youtube.com/watch?v=3sorCAFQOqc">Tulsa's Race Massacre of 1921 [Video]</a></li>
+    </ul>
     </div>
 
     <!-- Optional JavaScript -->

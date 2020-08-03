@@ -1,26 +1,100 @@
-<form action="/search/" method="post">
-{% csrf_token %}
-{% for field in form %}
-  <div class="fieldWrapper">
-      {{ field.errors }}
-      {{ field.label_tag }} {{ field }}
-  </div>
-{% endfor %}
-<input type="submit" value="Submit">
-</form>
-<table>
-  <tr>
-    <td>Name</td>
-    <td>Description</td>
-  </tr>
-  {% for business in businesses %}
-  <tr>
-    <td>{{business.name}}</td>
-    <td>{{business.description}}</td>
-  </tr>
-  {% empty %}
-  <tr>
-    <td>"Sorry, no businesses found."</td>
-  </tr>
-  {% endfor %}
-</table>
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static "images/apple-touch-icon.png" %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static "images/favicon-32x32.png" %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static "images/favicon-16x16.png" %}">
+
+    <title>Black Wall Street</title>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-md">
+      <a class="navbar-brand" href="#">Black Wall Street</a>
+      <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="main-navigation">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/history">History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/search">Investing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/add_business">Add Business</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="page-header header container-fluid" id="home-header">
+      <div class="overlay"></div>
+      <div class="description">
+        <h1>Search for investment opportunities</h1>
+        <p>Here you can search for opportunities to invest and support black-owned small businesses</p>
+        <a class="btn btn-outline-secondary btn-lg" roles="button" href ="#searchandinvest">Search and invest</a>
+      </div>
+    </header>
+
+    <div class="container features">
+      <h1 class="text-center m-4">Search for investment opportunities</h1>
+    <div class="search" id = "searchandinvest">
+        <form action="/search/" method="post">
+        {% csrf_token %}
+        <div class="row">
+          <div class="col-sm-4" style="display:flex;">
+            <b>{{form.category.label_tag}}</b> {{form.category}} 
+          </div>
+          <div class="col-sm-4" style="display:flex;">
+            <b>{{form.keywords.label_tag}}</b> {{form.keywords}}
+          </div> 
+            <input class="btn btn-outline-secondary" type="submit" value="Submit">
+          </div>
+        </div>
+        </form>
+        <p></p>
+        <table>
+          {% for business in businesses %}
+          <tr>
+              <div class="card" style="display:flex;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{business.name}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{business.category}}</h6>
+                    <p class="card-text">{{business.description}}</p>
+                    <a href="mailto:{{business.email}}" class="card-link">Email</a>
+                    <a href="{{business.link}}" class="card-link">Website</a> 
+                </div>
+              </div>
+            <td></td>
+            <td></td>
+          </tr>
+          {% empty %}
+          {% endfor %}
+        </table>
+        <p></p>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="{% static '/main.js' %}"></script>
+  </body>
+</html>
