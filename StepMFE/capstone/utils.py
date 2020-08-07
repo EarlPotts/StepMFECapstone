@@ -1,5 +1,3 @@
-import numpy as np
-
 '''
 inputs:
   b: a list of tuples
